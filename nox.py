@@ -9,6 +9,7 @@ def unit_tests(session, python_version):
     session.virtualenv_dirname = 'unit-' + python_version
 
     session.install('mock', 'pytest', 'pytest-cov')
+    session.install('raven')
     session.install('-e', '.')
 
     session.run(
