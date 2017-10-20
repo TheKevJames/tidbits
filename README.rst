@@ -17,6 +17,13 @@ Installation
 
     $ pip install --upgrade tidbits
 
+Note that in an effort to keep this library generalized, optional dependencies
+are not included, ie. for the `Sentry`_ integration you will still need to
+
+.. code-block:: console
+
+    $ pip install raven
+
 Usage
 -----
 
@@ -26,7 +33,7 @@ Integrations
 Do you use `Sentry`_? I do. And every single project I use it in contains the
 same block for configuring it from the `SENTRY_DSN` environment variable.
 
-.. code-clock:: python
+.. code-block:: python
 
     from tidbits.integrations.sentry import SENTRY
 

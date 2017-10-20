@@ -45,6 +45,6 @@ def cover(session, python_version):
 
     session.install('codecov', 'coverage', 'pytest-cov')
 
-    session.run('coverage', 'report', '--show-missing', '--fail-under=100')
+    session.run('coverage', 'report', '--show-missing', '--fail-under=90')
     session.run('codecov')
     session.run('coverage', 'erase')
