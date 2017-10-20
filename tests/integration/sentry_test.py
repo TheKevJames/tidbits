@@ -8,7 +8,7 @@ def test_requires_raven():
             from tidbits.integration.sentry import SENTRY
             _ = SENTRY
 
-    assert e.value.message == "No module named 'raven'"
+    assert e.value.message == 'No module named raven'
 
 
 def test_exposes_instance():

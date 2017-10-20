@@ -17,7 +17,6 @@ def unit_tests(session, python_version):
         '--cov=tidbits',
         '--cov-append',
         '--cov-report=',
-        '--cov-fail-under=100',
         'tests',
         *session.posargs)
 
