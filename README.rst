@@ -49,9 +49,9 @@ same block for configuring it from the `SENTRY_DSN` environment variable.
     :alt: Latest PyPI Version
     :target: https://pypi.org/project/tidbits/
 
-.. |circleci| image:: https://img.shields.io/circleci/project/github/thekevjames/tidbits/master.svg?style=flat-square
+.. |circleci| image:: https://img.shields.io/circleci/project/github/TheKevJames/tidbits/master.svg?style=flat-square
     :alt: CircleCI Test Status
-    :target: https://circleci.com/gh/thekevjames/tidbits/tree/master
+    :target: https://circleci.com/gh/TheKevJames/tidbits/tree/master
 
 .. |coverage| image:: https://img.shields.io/codecov/c/github/thekevjames/tidbits/master.svg?style=flat-square
     :alt: Code Coverage
