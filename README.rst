@@ -84,8 +84,8 @@ the same block for instrumenting the error logger.
 
 .. code-block:: python
 
-    from tidbits.integrations.sentry import SENTRY
-    from tidbits.integrations.sentry import instrument_logger
+    from tidbits.integration.sentry import SENTRY
+    from tidbits.integration.sentry import instrument_logger
 
     try:
         {}['missing_key']
