@@ -27,6 +27,23 @@ are not included, ie. for the `Sentry`_ integration you will still need to
 Usage
 -----
 
+GCloud
+~~~~~~
+
+> requires ``python-json-logger``
+
+Have you ever run an app on Google Cloud and wondered why all your logs were
+marked as errors, regardless of log level? Well, most likely you weren't
+formatting them correctly -- Google Cloud expects JSON logs with "severity"
+rather than "levelname", which you can set with:
+
+.. code-block:: python
+
+    from tidbits.gcloud.log import get_handler
+
+    logging.getLogger().addHandler(get_handler())
+    # or, even better, set all your loggers at once with tidbits.log
+
 Log
 ~~~
 
@@ -58,6 +75,8 @@ you.
 
 Integrations
 ~~~~~~~~~~~~
+
+> requires ``raven``
 
 Do you use `Sentry`_? I do. And every single project I use it in contains the
 same block for configuring it from the `SENTRY_DSN` environment variable and
