@@ -27,6 +27,25 @@ are not included, ie. for the `Sentry`_ integration you will still need to
 Usage
 -----
 
+Log
+~~~
+
+Ever had to configure the loggers of all of your dependencies? This one's for
+you.
+
+.. code-block:: python
+
+    from tidbits.log import get_all_loggers
+    from tidbits.log import get_all_base_loggers
+
+    import requests
+
+    get_all_loggers()
+    # ['requests', 'urllib3', 'urllib3.connection', 'urllib3.connectionpool', 'urllib3.poolmanager', 'urllib3.response', 'urllib3.util', 'urllib3.util.retry']
+
+    get_all_base_loggers()
+    # ['requests', 'urllib3']
+
 Integrations
 ~~~~~~~~~~~~
 
