@@ -37,6 +37,7 @@ you.
 
     from tidbits.log import get_all_loggers
     from tidbits.log import get_all_base_loggers
+    from tidbits.log import set_handler
     from tidbits.log import set_loglevel
 
     import requests
@@ -46,6 +47,9 @@ you.
 
     get_all_base_loggers()
     # ['requests', 'urllib3']
+
+    set_handler(MyCoolHandler)
+    # all loggers use this (and only this) handler
 
     set_loglevel(debug=True)
     # sets logging.getLogger() to DEBUG and all others to INFO

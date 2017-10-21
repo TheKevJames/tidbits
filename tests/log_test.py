@@ -1,7 +1,9 @@
 import logging
+import sys
 
 from tidbits.log import get_all_base_loggers
 from tidbits.log import get_all_loggers
+from tidbits.log import set_handler
 from tidbits.log import set_loglevel
 
 
@@ -20,6 +22,25 @@ def test_get_loggers():
 
     assert [x.startswith('pip') for x in set(get_all_loggers()) - loggers]
     assert set(get_all_base_loggers()) - base_loggers == {'pip'}
+
+
+def test_set_handler():
+    import pip  # pylint: disable=unused-variable
+
+    handler = logging.StreamHandler(sys.stdout)
+    set_handler(handler)
+
+    assert logging.getLogger('pip').handlers == [handler]
+
+
+def test_set_handler_twice():
+    import pip  # pylint: disable=unused-variable
+
+    handler = logging.StreamHandler(sys.stdout)
+    set_handler(handler)
+    set_handler(handler)
+
+    assert logging.getLogger('pip').handlers == [handler]
 
 
 def test_set_loglevel_debug():
