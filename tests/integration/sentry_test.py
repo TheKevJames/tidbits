@@ -1,3 +1,5 @@
+import logging
+
 import mock
 import pytest
 
@@ -15,3 +17,12 @@ def test_exposes_instance():
     from tidbits.integration.sentry import SENTRY
 
     assert SENTRY
+
+
+def test_instrument_logger():
+    from tidbits.integration.sentry import instrument_logger
+
+    test_logger_name = 'test_instrument_logger'
+    assert not logging.getLogger(test_logger_name).handlers
+    instrument_logger(test_logger_name)
+    assert len(logging.getLogger(test_logger_name).handlers) == 1

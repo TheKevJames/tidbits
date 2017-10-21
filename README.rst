@@ -48,7 +48,7 @@ you.
     get_all_base_loggers()
     # ['requests', 'urllib3']
 
-    set_handler(MyCoolHandler)
+    set_handler(myCoolHandler)
     # all loggers use this (and only this) handler
 
     set_loglevel(debug=True)
@@ -60,17 +60,22 @@ Integrations
 ~~~~~~~~~~~~
 
 Do you use `Sentry`_? I do. And every single project I use it in contains the
-same block for configuring it from the `SENTRY_DSN` environment variable.
+same block for configuring it from the `SENTRY_DSN` environment variable and
+the same block for instrumenting the error logger.
 
 .. code-block:: python
 
     from tidbits.integrations.sentry import SENTRY
+    from tidbits.integrations.sentry import instrument_logger
 
     try:
         {}['missing_key']
     except Exception:
         # damn, I totally didn't expect an error here, better send it to Sentry
         SENTRY.captureException()
+
+    # creates events in Sentry for each error log
+    instrument_logger(logging.Error)
 
 .. _Sentry: https://sentry.io/
 
