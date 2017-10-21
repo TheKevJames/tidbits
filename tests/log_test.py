@@ -1,5 +1,8 @@
+import logging
+
 from tidbits.log import get_all_base_loggers
 from tidbits.log import get_all_loggers
+from tidbits.log import set_loglevel
 
 
 def test_get_loggers():
@@ -17,3 +20,21 @@ def test_get_loggers():
 
     assert [x.startswith('pip') for x in set(get_all_loggers()) - loggers]
     assert set(get_all_base_loggers()) - base_loggers == {'pip'}
+
+
+def test_set_loglevel_debug():
+    import pip  # pylint: disable=unused-variable
+
+    set_loglevel(debug=True)
+
+    assert logging.getLogger().level == logging.DEBUG
+    assert logging.getLogger('pip').level == logging.INFO
+
+
+def test_set_loglevel_info():
+    import pip  # pylint: disable=unused-variable
+
+    set_loglevel(debug=False)
+
+    assert logging.getLogger().level == logging.INFO
+    assert logging.getLogger('pip').level == logging.WARNING
