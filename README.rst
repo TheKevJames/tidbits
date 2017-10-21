@@ -94,7 +94,7 @@ the same block for instrumenting the error logger.
         SENTRY.captureException()
 
     # creates events in Sentry for each error log
-    instrument_logger(logging.Error)
+    instrument_logger(level=logging.Error)
 
 .. _Sentry: https://sentry.io/
 
