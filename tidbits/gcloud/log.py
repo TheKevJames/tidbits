@@ -14,8 +14,11 @@ class JsonFormatter(jsonlogger.JsonFormatter):
 
     def process_log_record(self, log_record):
         # stackdriver uses "severity" instead of "levelname"
-        log_record['severity'] = log_record['levelname']
-        del log_record['levelname']
+        try:
+            log_record['severity'] = log_record['levelname']
+            del log_record['levelname']
+        except KeyError:
+            pass
 
         return super(JsonFormatter, self).process_log_record(log_record)
 
