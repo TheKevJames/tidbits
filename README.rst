@@ -65,8 +65,12 @@ you.
     get_all_base_loggers()
     # ['requests', 'urllib3']
 
-    set_handler(myCoolHandler)
+    set_handler(myCoolHandler, logger='applesauce')
+    # the "applesauce" logger uses this (and only this) handler
+    set_handler_globally(myCoolHandler)
     # all loggers use this (and only this) handler
+    set_handler_globally(myCoolHandler, ignore={'aardvark', 'banana'})
+    # all loggers except those listed use this (and only this) handler
 
     set_loglevel(debug=True)
     # sets logging.getLogger() to DEBUG and all others to INFO
