@@ -32,4 +32,7 @@ def set_loglevel(logger=None, debug=False):
 
     liblevel = mylevel + 10
     for liblogger in get_all_base_loggers():
+        if logger == liblogger:
+            continue
+
         logging.getLogger(liblogger).setLevel(liblevel)
