@@ -3,7 +3,7 @@ import nox
 
 
 @nox.session
-@nox.parametrize('python_version', ['2.7', '3.3', '3.4', '3.5', '3.6'])
+@nox.parametrize('python_version', ['2.7', '3.4', '3.5', '3.6'])
 def unit_tests(session, python_version):
     session.interpreter = 'python{}'.format(python_version)
     session.virtualenv_dirname = 'unit-' + python_version
