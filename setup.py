@@ -13,7 +13,7 @@ with open(os.path.join(PACKAGE_ROOT, 'requirements.txt')) as f:
 
 setuptools.setup(
     name='tidbits',
-    version='0.3.1',
+    version='0.3.2',
     description='Useful Python Tidbits',
     long_description=README,
     packages=setuptools.find_packages(exclude=('tests',)),
@@ -22,9 +22,11 @@ setuptools.setup(
     author_email='KevinJames@thekev.in',
     url='https://github.com/TheKevJames/tidbits',
     include_package_data=True,
+    license='MIT',
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
+        'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
