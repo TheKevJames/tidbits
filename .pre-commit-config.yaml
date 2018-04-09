@@ -1,15 +1,19 @@
 repos:
 -   repo: git://github.com/pre-commit/pre-commit-hooks
-    sha: v1.1.0
+    sha: v1.2.3
     hooks:
     -   id: check-ast
+    -   id: check-builtin-literals
     -   id: check-case-conflict
     -   id: check-executables-have-shebangs
     -   id: check-json
     -   id: check-merge-conflict
     -   id: check-symlinks
+    -   id: check-vcs-permalinks
     -   id: check-xml
     -   id: check-yaml
+        args:
+        - -m
     -   id: debug-statements
     -   id: detect-private-key
     -   id: double-quote-string-fixer
@@ -21,7 +25,7 @@ repos:
     -   id: requirements-txt-fixer
     -   id: trailing-whitespace
 -   repo: git://github.com/pre-commit/mirrors-pylint
-    sha: v1.7.4
+    sha: v1.8.4
     hooks:
     -   id: pylint
         args:
@@ -31,13 +35,21 @@ repos:
         - -d invalid-name
         - -d locally-disabled
         - -d missing-docstring
-        - -d unused-variable  # TODO: pylint bug?
-        exclude: "^TODO/*"
 -   repo: git://github.com/Lucas-C/pre-commit-hooks
-    sha: v1.1.4
+    sha: v1.1.5
     hooks:
+    -   id: remove-crlf
     -   id: remove-tabs
--   repo: https://github.com/asottile/reorder_python_imports.git
-    sha: v0.3.5
+-   repo: git://github.com/asottile/reorder_python_imports
+    sha: v1.0.1
     hooks:
     -   id: reorder-python-imports
+        language_version: python3.6
+        args:
+        - --py3-plus
+-   repo: git://github.com/asottile/pyupgrade
+    sha: v1.2.0
+    hooks:
+    -   id: pyupgrade
+        args:
+        - --py3-plus
