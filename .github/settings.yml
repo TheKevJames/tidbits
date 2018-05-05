@@ -1,14 +1,15 @@
 repository:
   name: tidbits
-  description: Useful Python Tidbits
+  description: useful python tidbits
   homepage: https://pypi.org/project/tidbits/
   private: false
 
   has_issues: true
   has_projects: false
   has_wiki: false
+  has_downloads: false
 
-  allow_merge_commit: true
+  allow_merge_commit: false
   allow_rebase_merge: true
   allow_squash_merge: true
 

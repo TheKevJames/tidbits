@@ -110,10 +110,6 @@ the same block for instrumenting the error logger.
     :alt: CircleCI Test Status
     :target: https://circleci.com/gh/TheKevJames/tidbits/tree/master
 
-.. |coverage| image:: https://img.shields.io/codecov/c/github/thekevjames/tidbits/master.svg?style=flat-square
-    :alt: Code Coverage
-    :target: https://codecov.io/gh/thekevjames/tidbits
-
 .. |pythons| image:: https://img.shields.io/pypi/pyversions/tidbits.svg?style=flat-square
     :alt: Python Version Support
     :target: https://pypi.org/project/tidbits/

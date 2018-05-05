@@ -19,14 +19,20 @@ def test_get_loggers():
     loggers = set(get_all_loggers())
     base_loggers = set(get_all_base_loggers())
 
-    import pip  # pylint: disable=unused-variable
+    print(loggers)
+    print(base_loggers)
+
+    _ = logging.getLogger('pip')
+
+    print(set(get_all_loggers()))
+    print(set(get_all_base_loggers()))
 
     assert [x.startswith('pip') for x in set(get_all_loggers()) - loggers]
     assert set(get_all_base_loggers()) - base_loggers == {'pip'}
 
 
 def test_set_handler():
-    import pip  # pylint: disable=unused-variable
+    _ = logging.getLogger('pip')
 
     handler = logging.StreamHandler(sys.stdout)
     set_handler(handler, logger='pip')
@@ -35,7 +41,7 @@ def test_set_handler():
 
 
 def test_set_handler_twice():
-    import pip  # pylint: disable=unused-variable
+    _ = logging.getLogger('pip')
 
     handler = logging.StreamHandler(sys.stdout)
     set_handler(handler, logger='pip')
@@ -45,7 +51,7 @@ def test_set_handler_twice():
 
 
 def test_set_handler_globally():
-    import pip  # pylint: disable=unused-variable
+    _ = logging.getLogger('pip')
 
     handler = logging.StreamHandler(sys.stdout)
     set_handler_globally(handler)
@@ -54,7 +60,7 @@ def test_set_handler_globally():
 
 
 def test_set_handler_globally_twice():
-    import pip  # pylint: disable=unused-variable
+    _ = logging.getLogger('pip')
 
     handler = logging.StreamHandler(sys.stdout)
     set_handler_globally(handler)
@@ -64,7 +70,7 @@ def test_set_handler_globally_twice():
 
 
 def test_set_loglevel_debug():
-    import pip  # pylint: disable=unused-variable
+    _ = logging.getLogger('pip')
 
     set_loglevel(debug=True)
 
@@ -73,7 +79,7 @@ def test_set_loglevel_debug():
 
 
 def test_set_loglevel_info():
-    import pip  # pylint: disable=unused-variable
+    _ = logging.getLogger('pip')
 
     set_loglevel(debug=False)
 
