@@ -12,8 +12,7 @@ repos:
     -   id: check-vcs-permalinks
     -   id: check-xml
     -   id: check-yaml
-        args:
-        - -m
+        args: [--allow-multiple-documents]
     -   id: debug-statements
     -   id: detect-private-key
     -   id: double-quote-string-fixer
@@ -21,6 +20,7 @@ repos:
     -   id: file-contents-sorter
         files: .gitignore
     -   id: mixed-line-ending
+        args: [--fix=lf]
     -   id: name-tests-test
     -   id: requirements-txt-fixer
     -   id: trailing-whitespace
@@ -46,11 +46,9 @@ repos:
     hooks:
     -   id: reorder-python-imports
         language_version: python3.6
-        args:
-        - --py3-plus
+        args: [--py3-plus]
 -   repo: git://github.com/asottile/pyupgrade
     sha: v1.2.0
     hooks:
     -   id: pyupgrade
-        args:
-        - --py3-plus
+        args: [--py3-plus]

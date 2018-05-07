@@ -43,8 +43,7 @@ def cover(session, python_version):
     session.interpreter = 'python{}'.format(python_version)
     session.virtualenv_dirname = 'cover'
 
-    session.install('codecov', 'coverage', 'pytest-cov')
+    session.install('coverage', 'pytest-cov')
 
     session.run('coverage', 'report', '--show-missing', '--fail-under=90')
-    session.run('codecov')
     session.run('coverage', 'erase')
