@@ -8,7 +8,7 @@ problem.
 Yes, I realize that's never going to happen. Contributions are very appreciated
 though, let's see how close we can get.
 
-|pypi| |circleci| |coverage| |pythons|
+|pypi| |circleci| |pythons|
 
 Installation
 ------------
@@ -24,13 +24,19 @@ are not included, ie. for the `Sentry`_ integration you will still need to
 
     $ pip install raven
 
+For convenience, these are bundled as extra dependencies, ie. you can do
+
+.. code-block:: console
+
+    $ pip install --upgrade tidbits[gcloud,sentry]
+
 Usage
 -----
 
 GCloud
 ~~~~~~
 
-> requires ``python-json-logger``
+> requires ``python-json-logger`` or ``tidbits[gcloud]``
 
 Have you ever run an app on Google Cloud and wondered why all your logs were
 marked as errors, regardless of log level? Well, most likely you weren't
@@ -80,7 +86,7 @@ you.
 Integrations
 ~~~~~~~~~~~~
 
-> requires ``raven``
+> requires ``raven`` or ``tidbits[sentry]``
 
 Do you use `Sentry`_? I do. And every single project I use it in contains the
 same block for configuring it from the `SENTRY_DSN` environment variable and

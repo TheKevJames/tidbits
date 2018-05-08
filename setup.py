@@ -18,6 +18,10 @@ setuptools.setup(
     long_description=README,
     packages=setuptools.find_packages(exclude=('tests',)),
     install_requires=REQUIREMENTS,
+    extras_require={
+        'gcloud': ['python-json-logger >= 0.1.0, < 1.0.0'],
+        'sentry': ['raven >= 5.0.0, < 7.0.0'],
+    },
     author='Kevin James',
     author_email='KevinJames@thekev.in',
     url='https://github.com/TheKevJames/tidbits',
