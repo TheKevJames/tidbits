@@ -89,8 +89,7 @@ Integrations
 > requires ``raven`` or ``tidbits[sentry]``
 
 Do you use `Sentry`_? I do. And every single project I use it in contains the
-same block for configuring it from the `SENTRY_DSN` environment variable and
-the same block for instrumenting the error logger.
+same block for configuring it and instrumenting the error logger.
 
 .. code-block:: python
 

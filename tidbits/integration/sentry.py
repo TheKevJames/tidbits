@@ -1,12 +1,10 @@
 import logging
-import os
 
 import raven
 from raven.handlers.logging import SentryHandler
 
 
-SENTRY_DSN = os.environ.get('SENTRY_DSN')
-SENTRY = raven.Client(SENTRY_DSN)  # pylint: disable=unused-variable
+SENTRY = raven.Client()
 
 
 def instrument_logger(logger=None, level=logging.ERROR):
