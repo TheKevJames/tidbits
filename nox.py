@@ -3,7 +3,7 @@ import nox
 
 
 @nox.session
-@nox.parametrize('python_version', ['2.7', '3.4', '3.5', '3.6'])
+@nox.parametrize('python_version', ['2.7', '3.4', '3.5', '3.6', '3.7'])
 def unit_tests(session, python_version):
     session.interpreter = 'python{}'.format(python_version)
     session.virtualenv_dirname = 'unit-' + python_version
@@ -23,7 +23,7 @@ def unit_tests(session, python_version):
 
 
 @nox.session
-@nox.parametrize('python_version', ['2.7', '3.6'])
+@nox.parametrize('python_version', ['2.7', '3.6', '3.7'])
 def lint_setup_py(session, python_version):
     session.interpreter = 'python{}'.format(python_version)
     session.virtualenv_dirname = 'setup-' + python_version
@@ -38,7 +38,7 @@ def lint_setup_py(session, python_version):
 
 
 @nox.session
-@nox.parametrize('python_version', ['3.6'])
+@nox.parametrize('python_version', ['3.7'])
 def cover(session, python_version):
     session.interpreter = 'python{}'.format(python_version)
     session.virtualenv_dirname = 'cover'

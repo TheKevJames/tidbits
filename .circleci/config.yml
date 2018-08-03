@@ -3,7 +3,7 @@ version: 2
 jobs:
   lint:
     docker:
-      - image: python:3.6.4
+      - image: python:3.7.0
     steps:
       - checkout
       - run: pip install pre-commit
@@ -18,7 +18,7 @@ jobs:
 
   pypi:
     docker:
-      - image: python:3.6.2-alpine3.6
+      - image: python:3.7.0-alpine3.6
     steps:
       - run: pip install twine
       - checkout
@@ -30,7 +30,7 @@ jobs:
 
   github:
     docker:
-      - image: python:3.6.2-alpine3.6
+      - image: python:3.7.0-alpine3.6
     steps:
       - run: apk add --no-cache curl git openssh-client
       - checkout
