@@ -25,6 +25,9 @@ setuptools.setup(
     author='Kevin James',
     author_email='KevinJames@thekev.in',
     url='https://github.com/TheKevJames/tidbits',
+    project_urls={
+        'Changelog': 'https://github.com/TheKevJames/tidbits/releases',
+    },
     include_package_data=True,
     license='MIT',
     classifiers=[
