@@ -13,7 +13,7 @@ with open(os.path.join(PACKAGE_ROOT, 'requirements.txt')) as f:
 
 setuptools.setup(
     name='tidbits',
-    version='0.4.0',
+    version='0.4.1',
     description='Useful Python Tidbits',
     long_description=README,
     packages=setuptools.find_packages(exclude=('tests',)),
