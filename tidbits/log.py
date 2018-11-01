@@ -21,6 +21,9 @@ def set_handler_globally(handler, logger=None, ignore=None):
         if liblogger not in ignore:
             set_handler(handler, logger=liblogger)
 
+    if logger:
+        # avoid log duplication
+        logging.getLogger().handlers = []
     # this may or may not be set above based on import order, do it here to be
     # explicitly sure
     set_handler(handler, logger=logger)
