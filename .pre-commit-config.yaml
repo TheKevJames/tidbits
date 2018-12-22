@@ -1,6 +1,6 @@
 repos:
--   repo: git://github.com/pre-commit/pre-commit-hooks
-    sha: v1.4.0
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.0.0
     hooks:
     -   id: check-ast
     -   id: check-builtin-literals
@@ -25,28 +25,34 @@ repos:
     -   id: name-tests-test
     -   id: requirements-txt-fixer
     -   id: trailing-whitespace
--   repo: git://github.com/pre-commit/mirrors-pylint
-    sha: v2.1.0
+-   repo: https://github.com/pre-commit/mirrors-pylint
+    rev: v2.2.2
     hooks:
     -   id: pylint
         args:
+        - --max-line-length=80
+        - --ignore-imports=yes
         - -d fixme
         - -d import-error
         - -d invalid-name
         - -d locally-disabled
         - -d missing-docstring
+        - -d too-few-public-methods
         - -d keyword-arg-before-vararg  # breaks py2
--   repo: git://github.com/Lucas-C/pre-commit-hooks
-    sha: v1.1.5
+-   repo: https://github.com/Lucas-C/pre-commit-hooks
+    rev: v1.1.6
     hooks:
     -   id: remove-crlf
     -   id: remove-tabs
--   repo: git://github.com/asottile/reorder_python_imports
-    sha: v1.1.0
+-   repo: https://github.com/asottile/reorder_python_imports
+    rev: v1.3.4
     hooks:
     -   id: reorder-python-imports
-        language_version: python3.7
--   repo: git://github.com/Lucas-C/pre-commit-hooks-markup
-    sha: v1.0.0
+-   repo: https://github.com/asottile/yesqa
+    rev: v0.0.8
+    hooks:
+    -   id: yesqa
+-   repo: https://github.com/Lucas-C/pre-commit-hooks-markup
+    rev: v1.0.0
     hooks:
     -   id: rst-linter
