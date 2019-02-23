@@ -12,7 +12,7 @@ def test_get_loggers():
     try:
         # implicitly imported with the first package import on py3.5+
         # importing here prevents test order from mattering
-        import concurrent.futures  # pylint: disable=unused-import
+        import concurrent.futures  # pylint: disable=unused-import  # noqa
     except ImportError:
         pass
 
