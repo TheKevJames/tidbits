@@ -19,8 +19,8 @@ setuptools.setup(
     packages=setuptools.find_packages(exclude=('tests',)),
     install_requires=REQUIREMENTS,
     extras_require={
-        'gcloud': ['python-json-logger >= 0.1.0, < 1.0.0'],
-        'sentry': ['raven >= 5.0.0, < 7.0.0'],
+        'gcloud': ['python-json-logger==0.1.11'],
+        'sentry': ['raven==6.10.0'],
     },
     author='Kevin James',
     author_email='KevinJames@thekev.in',
