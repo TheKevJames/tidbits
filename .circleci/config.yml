@@ -76,7 +76,7 @@ workflows:
             tags:
               only: /[0-9]+\.[0-9]+\.[0-9]+/
           requires:
-            - lint
+            - linter/pre-commit
             - nox
       - github:
           context: org-global
@@ -86,5 +86,5 @@ workflows:
             tags:
               only: /[0-9]+\.[0-9]+\.[0-9]+/
           requires:
-            - lint
+            - linter/pre-commit
             - nox
