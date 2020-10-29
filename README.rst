@@ -1,6 +1,19 @@
 Useful Python Tidbits
 =====================
 
+.. note::
+
+    The various features implemented in this library have now been upstreamed
+    in the revelant packages:
+
+    * ``sentry-sdk`` has replaced Raven and solves the problem outlined below
+    * ``python-json-logger`` now has single-line support for setting
+      ``rename_fields={'levelname': 'severity'}`` which is enough to fix
+      Gcloud logging
+
+    This library is now deprecated in favour of using the upstream features
+    directly!
+
 Ever find yourself copying and pasting small chunks of Python code between a
 bunch of your projects? The goal of this library is to reduce or eliminate that
 problem.
